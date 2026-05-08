@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { PERSONAL_DATA } from "../constants/data";
 import { SectionHeading } from "./UI";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 export function Contact() {
@@ -11,18 +11,18 @@ export function Contact() {
       <div className="container mx-auto">
         <SectionHeading title="Connect with Excellence" subtitle="Get in Touch" />
         
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="flex flex-col items-center justify-center max-w-2xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-8 w-full"
           >
-            <p className="text-xl text-medical-white/70 max-w-md leading-relaxed">
+            <p className="text-xl text-medical-white/70 leading-relaxed">
               I am always open to discussing new opportunities, strategic partnerships, and healthcare innovations.
             </p>
             
-            <div className="space-y-6">
+            <div className="flex flex-col gap-4 w-full">
               <ContactInfoItem 
                 icon={<Mail size={20} />} 
                 label="Digital Communication" 
@@ -40,40 +40,13 @@ export function Contact() {
                 label="Base Operations" 
                 value={PERSONAL_DATA.location} 
               />
+              <ContactInfoItem 
+                icon={<Linkedin size={20} />} 
+                label="Professional Network" 
+                value="Asad Ali Ashraf" 
+                href="https://www.linkedin.com/in/asad-ali-7298912a1/"
+              />
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass p-10 rounded-3xl border-medical-cyan/20"
-          >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <FloatingInput label="Your Name" type="text" />
-                <FloatingInput label="Email Address" type="email" />
-              </div>
-              <FloatingInput label="Subject" type="text" />
-              <div className="relative pt-6">
-                <textarea 
-                  required
-                  placeholder=" "
-                  className="w-full bg-transparent border-b border-white/20 py-4 focus:border-medical-cyan outline-none transition-colors peer min-h-[120px] resize-none"
-                />
-                <label className="absolute left-0 top-0 text-xs font-mono text-medical-cyan uppercase tracking-widest pointer-events-none transform -translate-y-4 transition-all peer-placeholder-shown:translate-y-6 peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/40">
-                  Message Content
-                </label>
-              </div>
-              
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full py-5 bg-medical-cyan text-medical-navy font-bold rounded-xl flex items-center justify-center gap-3 border-glow"
-              >
-                Initiate Message <Send size={18} />
-              </motion.button>
-            </form>
           </motion.div>
         </div>
       </div>
@@ -83,31 +56,15 @@ export function Contact() {
 
 function ContactInfoItem({ icon, label, value, href }: { icon: React.ReactNode, label: string, value: string, href?: string }) {
   return (
-    <a href={href} className={`flex items-center gap-4 group ${href ? 'cursor-pointer' : 'cursor-default'}`}>
-      <div className="p-3 rounded-xl glass border-medical-cyan/10 group-hover:border-medical-cyan/40 transition-all text-medical-cyan">
+    <a href={href} className={`flex items-center gap-6 p-6 rounded-2xl glass border-medical-cyan/10 group-hover:border-medical-cyan/40 transition-all ${href ? 'cursor-pointer hover:bg-white/5' : 'cursor-default'}`}>
+      <div className="p-4 rounded-xl glass text-medical-cyan">
         {icon}
       </div>
-      <div>
-        <p className="text-[10px] font-mono text-medical-cyan/60 uppercase tracking-widest">{label}</p>
-        <p className="text-lg font-medium group-hover:text-medical-cyan transition-colors">{value}</p>
+      <div className="text-left">
+        <p className="text-xs font-mono text-medical-cyan/60 uppercase tracking-widest mb-1">{label}</p>
+        <p className="text-xl font-medium group-hover:text-medical-cyan transition-colors">{value}</p>
       </div>
     </a>
-  );
-}
-
-function FloatingInput({ label, type }: { label: string, type: string }) {
-  return (
-    <div className="relative pt-6">
-      <input 
-        required
-        type={type}
-        placeholder=" "
-        className="w-full bg-transparent border-b border-white/20 py-2 focus:border-medical-cyan outline-none transition-colors peer"
-      />
-      <label className="absolute left-0 top-0 text-xs font-mono text-medical-cyan uppercase tracking-widest pointer-events-none transform -translate-y-4 transition-all peer-placeholder-shown:translate-y-6 peer-placeholder-shown:text-sm peer-placeholder-shown:text-white/40">
-        {label}
-      </label>
-    </div>
   );
 }
 
@@ -127,8 +84,6 @@ export function Footer() {
 
         <div className="flex gap-4">
           <SocialLink icon={<Linkedin size={20} />} href="https://www.linkedin.com/in/asad-ali-7298912a1/" />
-          <SocialLink icon={<Twitter size={20} />} href="#" />
-          <SocialLink icon={<Github size={20} />} href="#" />
         </div>
       </div>
     </footer>
@@ -139,7 +94,7 @@ function SocialLink({ icon, href }: { icon: React.ReactNode; href?: string }) {
   return (
     <motion.a
       whileHover={{ y: -5, color: "#00C2CB" }}
-      className="p-3 glass rounded-full text-white/60 transition-colors"
+      className="p-3 glass rounded-full text-white/60 transition-colors cursor-pointer"
       href={href || "#"}
       target={href && href !== "#" ? "_blank" : undefined}
       rel={href && href !== "#" ? "noopener noreferrer" : undefined}

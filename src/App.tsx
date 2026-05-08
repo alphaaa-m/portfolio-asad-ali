@@ -71,7 +71,7 @@ function PageWrapper({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <Router>
-      <div className="relative selection:bg-medical-cyan/30">
+      <div className="relative selection:bg-medical-cyan/30 overflow-x-hidden min-h-screen">
         <Navbar />
         <ParticleBackground />
         <ScrollToTop />

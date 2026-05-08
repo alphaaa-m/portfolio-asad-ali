@@ -109,7 +109,7 @@ export default function Home() {
                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,194,203,0.1),transparent_70%)]" />
                    
                    {/* Professional Avatar */}
-                   <div className="absolute inset-0 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
+                   <div className="absolute inset-0 flex items-center justify-center transition-all duration-700">
                       <img src="/profile.png" alt="Asad Ali Ashraf" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                    </div>
 

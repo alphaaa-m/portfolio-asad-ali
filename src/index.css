@@ -58,6 +58,7 @@
   @apply bg-white/10 rounded-full hover:bg-medical-cyan transition-colors;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
