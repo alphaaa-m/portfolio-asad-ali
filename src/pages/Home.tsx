@@ -30,7 +30,7 @@ export default function Home() {
       <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
         <div className="absolute top-1/4 left-10 h-[1px] w-32 bg-medical-cyan/50" />
         <div className="absolute top-1/4 left-10 w-[1px] h-32 bg-medical-cyan/50" />
-        <div className="absolute bottom-1/4 right-10 h-[1px] w-32 bg-medical-cyan/50 text-right pr-4 text-[10px] font-mono whitespace-nowrap">SYSTEM_CALIBRATED_73.0</div>
+        <div className="absolute bottom-1/4 right-10 h-[1px] w-32 bg-medical-cyan/50 text-right pr-4 text-[10px] font-mono whitespace-nowrap"></div>
         <div className="absolute bottom-1/4 right-10 w-[1px] h-32 bg-medical-cyan/50" />
       </div>
 
@@ -95,12 +95,12 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
-            className="relative lg:block hidden"
+            className="relative w-full mt-12 lg:mt-0"
           >
-            <div className="relative w-[600px] h-[400px] mx-auto group">
+            <div className="relative w-full max-w-[600px] aspect-[4/3] mx-auto group">
               {/* Outer Decorative Rings */}
-              <div className="absolute inset-0 border border-medical-cyan/10 rounded-[3rem] -m-8 animate-[spin_40s_linear_infinite]" />
-              <div className="absolute inset-0 border border-medical-teal/5 rounded-[3rem] -m-12 animate-[spin_60s_linear_infinite_reverse]" />
+              <div className="absolute inset-0 border border-medical-cyan/10 rounded-[3rem] -m-4 md:-m-8 animate-[spin_40s_linear_infinite]" />
+              <div className="absolute inset-0 border border-medical-teal/5 rounded-[3rem] -m-6 md:-m-12 animate-[spin_60s_linear_infinite_reverse]" />
               
               {/* Main Image Container */}
               <div className="relative w-full h-full rounded-[3.5rem] glass overflow-hidden border-medical-cyan/30 flex items-center justify-center p-4">

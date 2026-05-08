@@ -116,7 +116,7 @@ export function Footer() {
     <footer className="py-12 border-t border-white/5 px-6 relative z-10 bg-medical-navy">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
         <Link to="/" className="flex items-center justify-center md:justify-start gap-4">
-          <img src="/logo.png" alt="Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+          <img src="/logo.png" alt="Logo" className="w-20 h-20 md:w-28 md:h-28 object-contain opacity-70 hover:opacity-100 transition-opacity" />
           <h2 className="text-2xl md:text-3xl font-bold tracking-tighter uppercase">
             ASAD<span className="text-medical-cyan">ALI</span>
           </h2>
@@ -161,12 +161,14 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[60] px-4 py-6 md:px-8 border-b border-white/5 glass-dark pointer-events-auto">
-         <div className="container mx-auto flex justify-between items-center">
+      <nav className="fixed top-0 left-0 right-0 z-[60] px-4 h-20 md:h-24 border-b border-white/5 glass-dark pointer-events-auto flex items-center">
+         <div className="container mx-auto flex justify-between items-center w-full">
             <Link to="/" onClick={() => setIsOpen(false)}>
-              <div className="flex items-center gap-3 group">
-                 <img src="/logo.png" alt="Logo" className="w-20 h-20 md:w-24 md:h-24 object-contain group-hover:scale-105 transition-transform duration-300" />
-                 <span className="font-display font-bold text-xl md:text-2xl tracking-tighter uppercase">ASAD<span className="text-medical-cyan">ALI</span></span>
+              <div className="flex items-center gap-3 group relative">
+                 <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+                    <img src="/logo.png" alt="Logo" className="w-[250%] h-[250%] max-w-none object-contain group-hover:scale-110 transition-transform duration-300" />
+                 </div>
+                 <span className="font-display font-bold text-xl md:text-2xl tracking-tighter uppercase relative z-10">ASAD<span className="text-medical-cyan">ALI</span></span>
               </div>
             </Link>
 
