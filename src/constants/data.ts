@@ -13,22 +13,15 @@ export const PERSONAL_DATA = {
   about: "Experienced pharmaceutical professional with hands-on expertise in pharmaceutical sales, marketing, and customer relationship management. Skilled in communication, adaptability, and field operations with years of practical experience in leading pharma companies. Passionate about healthcare industry growth, professional discipline, and continuous learning.",
   experience: [
     {
-      company: "Company TBD",
-      role: "Role Placeholder",
-      period: "Year – Year",
-      description: "Placeholder description for previous position.",
-      achievements: ["Achievement placeholder 1", "Achievement placeholder 2"]
-    },
-    {
-      company: "Company TBD",
-      role: "Role Placeholder",
-      period: "Year – Year",
-      description: "Placeholder description for previous position.",
-      achievements: ["Achievement placeholder 1", "Achievement placeholder 2"]
+      company: "Life Healthcare",
+      role: "Area Sale Manager (ASM)",
+      period: "2022 – present",
+      description: "Managing regional sales operations, overseeing staff performance, and implementing territory business plans to meet organizational objectives.",
+      achievements: ["Strengthened relationships with key healthcare stakeholders", "Consistently achieved area sales targets"]
     },
     {
       company: "Bosch Pharma",
-      role: "Personal Secretary (PS)",
+      role: "Project Specialist (PS)",
       period: "March 2017 – 2022",
       description: "Leading administrative coordination, communication handling, and internal operational support for strategic growth.",
       achievements: ["Streamlined internal communication protocols", "Managed high-level documentation with 100% accuracy"]

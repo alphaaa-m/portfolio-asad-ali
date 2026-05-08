@@ -35,13 +35,14 @@ export default function Home() {
       </div>
 
       <section className="min-h-screen flex items-center px-6 pt-20">
-        <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
+            className="order-2 lg:order-1"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -60,7 +61,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <div className="h-10 mb-8">
+            <div className="min-h-[120px] md:min-h-[80px] lg:min-h-[40px] mb-8">
               <p className="text-xl md:text-2xl text-medical-teal font-display font-light">
                 {displayText}<span className="inline-block w-1 h-6 bg-medical-cyan ml-1 animate-pulse" />
               </p>
@@ -80,13 +81,15 @@ export default function Home() {
                   View Profile <ArrowRight size={20} />
                 </motion.button>
               </Link>
-              <motion.button
+              <motion.a
+                href="/CV_ASAD_ALI.pdf"
+                download="CV_ASAD_ALI.pdf"
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.08)" }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 glass text-medical-white font-bold rounded-2xl border border-white/10 flex items-center gap-2"
               >
                 Download CV <Download size={20} />
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
 
@@ -95,7 +98,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
-            className="relative w-full mt-12 lg:mt-0"
+            className="relative w-full mt-12 lg:mt-0 order-1 lg:order-2"
           >
             <div className="relative w-full max-w-[600px] aspect-[4/3] mx-auto group">
               {/* Outer Decorative Rings */}
@@ -103,14 +106,11 @@ export default function Home() {
               <div className="absolute inset-0 border border-medical-teal/5 rounded-[3rem] -m-6 md:-m-12 animate-[spin_60s_linear_infinite_reverse]" />
               
               {/* Main Image Container */}
-              <div className="relative w-full h-full rounded-[3.5rem] glass overflow-hidden border-medical-cyan/30 flex items-center justify-center p-4">
-                <div className="absolute inset-4 rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-medical-navy to-medical-cyan/10 ring-1 ring-white/10">
-                   {/* Background Elements */}
-                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,194,203,0.1),transparent_70%)]" />
-                   
+              <div className="relative w-full h-full rounded-[3.5rem] overflow-hidden border-2 border-medical-cyan/50 flex items-center justify-center p-4 bg-transparent shadow-[0_0_30px_rgba(0,194,203,0.3)]">
+                <div className="absolute inset-4 rounded-[2.5rem] overflow-hidden overflow-hidden ring-1 ring-white/10">
                    {/* Professional Avatar */}
                    <div className="absolute inset-0 flex items-center justify-center transition-all duration-700">
-                      <img src="/profile.png" alt="Asad Ali Ashraf" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                      <img src="/profile.png" alt="Asad Ali Ashraf" className="w-full h-full object-cover" />
                    </div>
 
                    {/* Scanning Glow Line */}

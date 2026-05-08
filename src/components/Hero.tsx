@@ -25,11 +25,12 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden px-6">
-      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 pt-10 lg:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="order-2 lg:order-1"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass mb-6 border-medical-cyan/20">
             <span className="relative flex h-2 w-2">
@@ -44,7 +45,7 @@ export function Hero() {
             <span className="text-medical-cyan text-glow block">ASHRAF</span>
           </h1>
 
-          <div className="h-8 mb-8">
+          <div className="min-h-[72px] md:min-h-[40px] mb-8">
             <p className="text-xl md:text-2xl text-medical-teal font-light">
               {displayText}<span className="animate-pulse">|</span>
             </p>
@@ -63,13 +64,15 @@ export function Hero() {
             >
               View Experience <ChevronRight size={18} />
             </motion.a>
-            <motion.button
+            <motion.a
+              href="/CV_ASAD_ALI.pdf"
+              download="CV_ASAD_ALI.pdf"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 glass text-medical-white font-bold rounded-lg flex items-center gap-2"
             >
               Download CV <Download size={18} />
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 
@@ -77,9 +80,9 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative perspective-1000 hidden lg:block"
+          className="relative perspective-1000 order-1 lg:order-2 flex justify-center w-full"
         >
-          <div className="relative w-[600px] h-[400px] mx-auto">
+          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] mx-auto">
             {/* Geometric Pharma Elements */}
             <motion.div
               animate={{ rotate: 360 }}
@@ -89,19 +92,19 @@ export function Hero() {
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-8 border border-medical-teal/10 rounded-full"
+              className="absolute inset-4 lg:inset-8 border border-medical-teal/10 rounded-full"
             />
             
             {/* Central Profile "Container" */}
-            <div className="absolute inset-20 glass rounded-3xl overflow-hidden border-medical-cyan/30 flex items-center justify-center group bg-medical-navy">
-               <img src="/profile.png" alt="Profile Picture" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-8 lg:inset-16 rounded-[2rem] overflow-hidden border-2 border-medical-cyan/50 flex items-center justify-center group shadow-[0_0_30px_rgba(0,194,203,0.3)]">
+               <img src="/profile.png" alt="Profile Picture" className="w-full h-full object-cover" />
                
                {/* Overlay Data Streams */}
                <div className="absolute inset-0 pointer-events-none opacity-30">
-                  <div className="absolute top-4 left-4 h-[1px] w-12 bg-medical-cyan" />
-                  <div className="absolute top-4 left-4 w-[1px] h-12 bg-medical-cyan" />
-                  <div className="absolute bottom-4 right-4 h-[1px] w-12 bg-medical-cyan" />
-                  <div className="absolute bottom-4 right-4 w-[1px] h-12 bg-medical-cyan" />
+                  <div className="absolute top-4 left-4 h-[1px] w-8 lg:w-12 bg-medical-cyan" />
+                  <div className="absolute top-4 left-4 w-[1px] h-8 lg:h-12 bg-medical-cyan" />
+                  <div className="absolute bottom-4 right-4 h-[1px] w-8 lg:w-12 bg-medical-cyan" />
+                  <div className="absolute bottom-4 right-4 w-[1px] h-8 lg:h-12 bg-medical-cyan" />
                </div>
             </div>
           </div>
